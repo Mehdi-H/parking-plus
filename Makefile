@@ -16,4 +16,4 @@ install-dependencies-run:
 
 .PHONY: tests  ## to run tests
 tests:
-	pytest .
+	pytest --html=report.html .
