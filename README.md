@@ -2,12 +2,13 @@
 
 ## Getting started
 
-## Todo
+## Tout doux
 
-- [ ] extraire l'implémentation dans des fichiers sources (c'est dans les tests pour le moment)
+- [ ] Next session 👉 "découpler par événements"
 - [ ] renommer le fichier de test :)
 - [ ] Software design
 - [ ] exposer une route HTTP pour ouvrir le parking
+- [x] extraire l'implémentation dans des fichiers sources (c'est dans les tests pour le moment)
 
 ## Ressources
 
