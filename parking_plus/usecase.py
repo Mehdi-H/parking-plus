@@ -6,11 +6,11 @@ from parking_plus.domain import DisplayPanneauRepository, BaseDeDonnéesParkingR
 
 @dataclass
 class OuvrirUnParking:
-    écran: DisplayPanneauRepository
+    displayPanneau: DisplayPanneauRepository
     baseDeDonnéesParking: BaseDeDonnéesParkingRepository
 
     def exécuter(self, parking_id: str) -> None:
         parking = self.baseDeDonnéesParking.récupérer_parking_par(parking_id)
         parking.ouvrir()
         nombre_de_places_disponibles = parking.nombre_de_places_disponibles_à_afficher()
-        self.écran.afficher(nombre_de_places_disponibles)
+        self.displayPanneau.afficher(nombre_de_places_disponibles)
