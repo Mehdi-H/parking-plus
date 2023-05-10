@@ -1,6 +1,9 @@
-from abc import ABC
+import datetime
+import logging
+import time
+from abc import ABC, abstractmethod
 from dataclasses import dataclass
-from typing import List
+from typing import List, Type
 
 
 class Event:
@@ -16,17 +19,15 @@ class CommandHandler(ABC):
         pass
 
     @staticmethod
-    def commande_supportée() -> Command:
+    @abstractmethod
+    def commande_supportée() -> Type:
         pass
 
 
 class CommandBus(ABC):
+    @abstractmethod
     def dispatch(self, command: Command) -> List[Event]:
         pass
-
-
-class CommandDispatcher:
-    pass
 
 
 @dataclass
@@ -35,7 +36,7 @@ class CommandDispatcher(CommandBus):
 
     @classmethod
     def construire_le_bus_depuis_une_list_de_commands_handler(cls, command_handlers: List[
-        CommandHandler]) -> CommandDispatcher:
+        CommandHandler]) -> "CommandDispatcher":
         commandes_supportées = set([command_handler.commande_supportée() for command_handler in command_handlers])
         if len(commandes_supportées) != len(command_handlers):
             raise CommandBusError("Deux command handlers supportent le même type de commande")
@@ -50,3 +51,16 @@ class CommandDispatcher(CommandBus):
 
 class CommandBusError(Exception):
     pass
+
+
+@dataclass
+class CommandLoggingMiddleware(CommandBus):
+    next_middleware: CommandBus
+
+    def dispatch(self, command: Command) -> List[Event]:
+        logger = logging.getLogger("command_logging_middleware")
+        print(f"Une commande de type {command} est en cours de traitement")
+        events = self.next_middleware.dispatch(command)
+        print(
+            f"Une commande de type {command} a été traitée et a produit les évènements suivants : {events}")
+        return events

@@ -6,7 +6,7 @@ from parking_plus.domain import DisplayPanneauRepository, BaseDeDonnéesParkingR
 
 
 @dataclass
-class DisplayPanneauRepositoryMock(DisplayPanneauRepository):
+class DisplayPanneauRepositoryImpl(DisplayPanneauRepository):
     message_capturé: str = ""
 
     def afficher(self, message: str) -> None:
@@ -16,6 +16,6 @@ class DisplayPanneauRepositoryMock(DisplayPanneauRepository):
         return message_attendu == self.message_capturé
 
 
-class BaseDeDonnéesParkingRepositoryMock(BaseDeDonnéesParkingRepository):
+class BaseDeDonnéesParkingRepositoryInMemory(BaseDeDonnéesParkingRepository):
     def récupérer_parking_par(self, id_parking) -> Parking:
         return Parking(etat="fermé", capacité=500)
