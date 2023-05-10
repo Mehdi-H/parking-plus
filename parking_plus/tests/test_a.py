@@ -1,8 +1,8 @@
 import pytest
 
-from domain import Parking
-from infrastructure import DisplayPanneauRepositoryMock, BaseDeDonnéesParkingRepositoryMock
-from usecase import OuvrirUnParking
+from parking_plus.domain import Parking
+from parking_plus.infrastructure import DisplayPanneauRepositoryMock, BaseDeDonnéesParkingRepositoryMock
+from parking_plus.usecase import OuvrirUnParking
 
 
 @pytest.mark.unitaire

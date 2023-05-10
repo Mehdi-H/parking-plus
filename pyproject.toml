@@ -1,0 +1,18 @@
+[project]
+name = "parking_plus"
+description = ""
+version = "0.0.1"
+authors = []
+dependencies = []
+
+[project.optional-dependencies]
+tests = ["pytest", "pytest-html"]
+
+[tool.setuptools]
+packages = ["parking_plus"]
+
+[tool.pytest.ini_options]
+markers = [
+    "unitaire",
+    "functional"
+]

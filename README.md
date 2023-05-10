@@ -14,4 +14,4 @@
 
 - [Event Storming (process modeling)
 ](https://docs.google.com/presentation/d/1-XBnyUf5J9UyyKpYZFftjv3IHXzGI5ukFeM2wyaIQEY/edit#slide=id.g22d86bb880c_0_17)
-  - ![docs/event-storming-process-modelling.png](tests/docs/event-storming-process-modelling.png)
+  - ![docs/event-storming-process-modelling.png](parking_plus/tests/docs/event-storming-process-modelling.png)

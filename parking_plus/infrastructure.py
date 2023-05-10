@@ -2,7 +2,7 @@
 
 from dataclasses import dataclass
 
-from domain import DisplayPanneauRepository, BaseDeDonnéesParkingRepository, Parking
+from parking_plus.domain import DisplayPanneauRepository, BaseDeDonnéesParkingRepository, Parking
 
 
 @dataclass

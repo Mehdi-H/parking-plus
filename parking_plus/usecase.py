@@ -1,7 +1,7 @@
 """Un usecase porte une intention métier, en réaction à un event/command/input utilisateur, ..."""
 from dataclasses import dataclass
 
-from domain import DisplayPanneauRepository, BaseDeDonnéesParkingRepository
+from parking_plus.domain import DisplayPanneauRepository, BaseDeDonnéesParkingRepository
 
 
 @dataclass
