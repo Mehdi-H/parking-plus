@@ -2,13 +2,14 @@
 
 ## Getting started
 
-## Tout doux
+## Tout doux 🐤
 
-- [ ] Next session 👉 "découpler par événements"
+- [x] Next session 👉 "découpler par événements"
 - [ ] renommer le fichier de test :)
 - [ ] Software design
 - [ ] exposer une route HTTP pour ouvrir le parking
 - [x] extraire l'implémentation dans des fichiers sources (c'est dans les tests pour le moment)
+- [ ] logger les évènements
 
 ## Ressources
 

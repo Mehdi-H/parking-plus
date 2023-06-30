@@ -1,5 +1,5 @@
 from dataclasses import dataclass
-from typing import Optional, List
+from typing import Optional, List, Type
 
 import pytest
 
@@ -43,7 +43,7 @@ class UnAutreCommandHandler(CommandHandler):
         return [UnEvent('5678')]
 
     @staticmethod
-    def commande_supportée() -> UneAutreCommande:
+    def commande_supportée() -> Type:
         return UneAutreCommande
 
 

@@ -16,6 +16,12 @@ class DisplayPanneauRepositoryImpl(DisplayPanneauRepository):
         return message_attendu == self.message_capturé
 
 
+@dataclass
 class BaseDeDonnéesParkingRepositoryInMemory(BaseDeDonnéesParkingRepository):
+    parking: Parking
+
+    def sauvegarder(self, parking: Parking):
+        self.parking = parking
+
     def récupérer_parking_par(self, id_parking) -> Parking:
-        return Parking(etat="fermé", capacité=500)
+        return Parking.reconstituer(état=self.parking.état, capacité=self.parking.capacité, id=1)
